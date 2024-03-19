@@ -5,4 +5,6 @@ close-btn = document.getByElementById('.close-btn')
 rules-btn.addEventListener(click, =>{
     rules.addClassList('show')
 })
-close-btn
+close-btn.addEventListener(click, =>{
+    
+})
