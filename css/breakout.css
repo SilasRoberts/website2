@@ -41,3 +41,15 @@ h1{
 .btn:active{
     transform:scale(0.98)
 }
+.rules-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+}
+.rules{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#333;
+    color:white;
+}
