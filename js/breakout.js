@@ -11,14 +11,14 @@ ball={
     x: canvas.width / 2,
     y:canvas.heigght / 2,
     size:10,
-    speed:4;
+    speed:4,
     dx:4,
     dy:-4,
 }
 //draw ball on canvas
 function drawball(){
     ctx.beginPath()
-    ctx.arc(75,75,50, 0, Math.PI * 2, true)
+    ctx.arc(ball.x,ball.y,ball.size, 0, Math.PI * 2, true)
     ctx.stroke()
 }
 
