@@ -6,5 +6,5 @@ rules-btn.addEventListener(click, =>{
     rules.addClassList('show')
 })
 close-btn.addEventListener(click, =>{
-    
+    rules.removeClassList('remove')
 })
