@@ -15,6 +15,19 @@ ball={
     dx:4,
     dy:-4,
 }
+
+//create paddle properties
+paddle = {
+    x:canvas.width / 2 - 40,
+    y:canvas.height - 20,
+    w:80,
+    h:10,
+    speed:10,
+    dx:0,
+}
+
+
+
 //draw ball on canvas
 function drawball(){
     ctx.beginPath()
