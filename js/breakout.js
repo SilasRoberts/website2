@@ -144,10 +144,16 @@ document.addEventListener('keyup', keyUp)
 
 
 
+//
+function moveBall(){
+    ball.x = ball.x + ball.dx
+}
+
 
 
 //Update the canvas drawing
 function update(){
+    moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
