@@ -130,7 +130,7 @@ function keyUp(e){
 }
 function keyDown(e){
     if(e.key =='ArrowLeft'|| e.key == 'Left'){
-        paddle.dx = -paddle.speed
+        paddle.dx = -1 *paddle.speed
     }
     }
     function keyUp(e){
@@ -148,6 +148,16 @@ document.addEventListener('keyup', keyUp)
 function moveBall(){
     ball.x = ball.x + ball.dx
     ball.y = ball.y + ball.dy
+
+    //wallcollision(top)
+
+    if(ball.y + ball.size < 0){
+        ball.dy = -1 *ball.dy
+    }
+    //wall colosion(right)
+    if (ball.x + ball.size > canvas.width){
+        ball.dx = -1* ball.dx
+    }
 }
 
 
