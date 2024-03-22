@@ -99,12 +99,13 @@ drawBall()
 drawScore()
 drawBricks()
 }
-
+//Update the canvas drawing
 function update(){
+    movePaddle)_
     draw()
     requestAnimationFrame(update)
 }
-
+update()
 
 //Buttons
 rulesbtn.addEventListener('click',() =>{
