@@ -102,8 +102,24 @@ drawBricks()
 
 //move the paddleon canvas
 function movePaddle(){
-    
+    paddle.x = paddle.x + paddle.dx
 }
+
+
+
+
+
+//keydown event
+function keyDown(e){
+    console.log(e.key)
+}
+
+//Keyboard event
+document.addEventListener('keydown', keyDown)
+
+
+
+
 
 
 //Update the canvas drawing
