@@ -99,9 +99,16 @@ drawBall()
 drawScore()
 drawBricks()
 }
+
+//move the paddleon canvas
+function movePaddle(){
+    
+}
+
+
 //Update the canvas drawing
 function update(){
-    movePaddle)_
+    movePaddle()
     draw()
     requestAnimationFrame(update)
 }
