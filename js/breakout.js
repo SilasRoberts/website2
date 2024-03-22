@@ -100,7 +100,10 @@ drawScore()
 drawBricks()
 }
 
-
+function update(){
+    draw()
+    requestAnimationFrame(update)
+}
 
 
 //Buttons
