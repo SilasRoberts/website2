@@ -101,9 +101,16 @@ drawScore()
 drawBricks()
 }
 
-//move the paddleon canvas
+//move the paddle on canvas
 function movePaddle(){
     paddle.x = paddle.x + paddle.dx
+    //border detection
+    if(paddle.x < 0 ){
+        paddle.x = 0
+    }
+    if(paddle.x + paddle.w > canvas.w){
+        paddle.x = canvas.w - paddle.w
+    }
 }
 
 
