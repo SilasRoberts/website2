@@ -161,12 +161,54 @@ function moveBall(){
     //wall colosion(bottom)
     if(ball.y +ball.size > canvas.height){
         ball.dy = -1* ball.dy
+        showAllBricks()
+        score = 0
     }
+    //(wall colosion(left))
     if(ball.x +ball.size < 0){
         ball.dx = -1* ball.dx
     }
+
+    //paddle colsoion
+    if(ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y){
+        ball.dy = -1*ball.speed
+    }
+
+    //brick colosion
+    bricks.forEach(column =>{
+        column.forEach(brick =>{
+            if(brick.visible){
+                if( ball.x - ball.size > brick.x &&
+                    ball.x +ball.size < brick.x + brick.w &&
+                    ball.y - ball.size < brick.y + brick.h &&
+                    ball.y + ball.size > brick.y
+                    ){
+                ball.dy = -1*ball.dy
+                brick.visible = flase
+                increaseScore()
+                }
+            }
+        })
+    })
+
+}
+function increaseScore(){
+    score = score + 1
+
+    if(score == brickRowCount * brickColumnCount){
+        score = 0
+        showAllBricks()
+    }
 }
 
+
+function showAllBricks(){
+    bricks.forEach(column =>{
+        column.forEach(brick =>{
+            brick.visible = true
+        })
+    })
+}
 
 
 //Update the canvas drawing
