@@ -2,7 +2,7 @@ rules= document.getByElementById('rules')
 rulesbtn = document.getByElementById('rules-btn')
 closebtn = document.getByElementById('close-btn')
 
-
+    console.log("Hello")
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
@@ -179,7 +179,7 @@ function moveBall(){
         column.forEach(brick =>{
             if(brick.visible){
                 if( ball.x - ball.size > brick.x &&
-                    ball.x +ball.size < brick.x + brick.w &&
+                    ball.x + ball.size < brick.x + brick.w &&
                     ball.y - ball.size < brick.y + brick.h &&
                     ball.y + ball.size > brick.y
                     ){
