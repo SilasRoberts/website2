@@ -124,7 +124,7 @@ if(e.key =='ArrowRight'|| e.key == 'Right'){
 }
 }
 function keyUp(e){
-    if(e.key == 'ArrowRight' || e.key'Right'){
+    if(e.key == 'ArrowRight' || e.key == 'Right'){
     paddle.dx = 0
 }
 }
