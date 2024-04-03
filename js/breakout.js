@@ -44,7 +44,7 @@ for (let i = 0; i < BrickRowCount; i++) {
         bricks[i][j] = {
             x,
             y,
-            ...BrickInfo
+         ...BrickInfo
         }
     }
 }
