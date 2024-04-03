@@ -155,7 +155,11 @@ function showAllBricks() {
         })
     })
 }
+let startButton = document.getElementById("startButton");
 
+startButton.addEventListener("click", function() {
+    draw();
+    startButton.style.display = "none";})
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawPaddle()
