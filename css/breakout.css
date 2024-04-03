@@ -64,3 +64,9 @@ h1 {
 .rules.show {
     transform: translateX(0);
 }
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
