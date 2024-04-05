@@ -8,7 +8,6 @@ start = doument.getElementById('startbutton')
 start.addEventListener('click', () => {
     update
 })
-bool check = false
 
 score = 0
 BrickRowCount = 9
