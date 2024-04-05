@@ -4,7 +4,9 @@ rules = document.getElementById('rules')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
-start = addEventListener('startbutton')
+start = addEventListener('startbutton' => {
+    
+})
 
 
 score = 0
