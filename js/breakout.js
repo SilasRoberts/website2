@@ -3,7 +3,7 @@ close = document.getElementById('close-btn')
 rules = document.getElementById('rules')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
-start = document.getElementById('startbutton')
+start = document.getElementById('startButton')
 
 start.addEventListener('click', () => {
     update()
