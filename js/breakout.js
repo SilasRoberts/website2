@@ -177,9 +177,7 @@ function update() {
     moveBall()
     movePaddle()
     draw()
-    if(check){
     requestAnimationFrame(update)
-    }
 }
 
 update()
