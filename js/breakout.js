@@ -6,8 +6,8 @@ ctx = canvas.getContext('2d')
 start = document.getElementById('startbutton')
 
 start.addEventListener('click', () => {
-    update();
-})
+    update()
+});
 
 score = 0
 BrickRowCount = 9
