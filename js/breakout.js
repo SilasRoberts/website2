@@ -4,6 +4,9 @@ rules = document.getElementById('rules')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
+start = addEventListener('startbutton')
+
+
 score = 0
 BrickRowCount = 9
 BrickColumnCount = 5
