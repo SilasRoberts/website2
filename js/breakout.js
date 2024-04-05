@@ -180,7 +180,6 @@ function update() {
     requestAnimationFrame(update)
 }
 
-update()
 
 function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'd') {
