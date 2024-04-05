@@ -6,7 +6,7 @@ ctx = canvas.getContext('2d')
 start = doument.getElementById('startbutton')
 
 start.addEventListener('click', () => {
-
+    
 })
 
 
