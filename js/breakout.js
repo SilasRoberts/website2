@@ -165,7 +165,7 @@ function draw() {
 }
 
 let gamePaused = true;
-let darkMode = false;
+let colorTheme = false;
 let gameover = false;
 
 const startButton = document.getElementById('start-btn');
@@ -173,17 +173,17 @@ const restartButton = document.createElement('button');
 restartButton.textContent = 'Restart';
 restartButton.classList.add('btn');
 
-const darkModeButton = document.getElementById('dark-mode-btn');
+const colorThemeButton = document.getElementById('color-theme-btn');
 
-function toggleDarkMode() {
-    darkMode = !darkMode;
-    document.body.style.backgroundColor = darkMode ? '#222' : '#0095DD';
-    canvas.style.background = darkMode ? '#333' : '#f0f0f0';
-    ctx.fillStyle = darkMode ? '#fff' : '#0095DD';
+function toggleColorTheme() {
+    colorTheme = !colorTheme;
+    document.body.style.backgroundColor = colorTheme ? 'Blue' : 'White';
+    canvas.style.background = colorTheme ? 'Black' : 'Gold';
+    ctx.fillStyle = colorTheme ? '#fff' : '#0095DD';
     draw();
 }
 
-darkModeButton.addEventListener('click', toggleDarkMode);
+colorThemeButton.addEventListener('click', toggleColorTheme);
 
 startButton.addEventListener('click', () => {
     if (gamePaused) {
@@ -200,36 +200,34 @@ document.body.appendChild(restartButton);
 function checkGameOver() {
     if (ball.y + ball.size > canvas.height) {
         gameover = true;
-        restartButton.style.display = 'block'; // Display restart button
-        startButton.style.display = 'none'; // Hide start button
-        gamePaused = true; // Pause the game
-        prevScore = score; // Store the score just before the ball hits the bottom
-        drawScore(); // Redraw the score
+        restartButton.style.display = 'block';
+        startButton.style.display = 'none';
+        gamePaused = true;
+        prevScore = score;
+        drawScore();
     }
 }
 
-// Function to restart the game
 function restartGame() {
     score = 0;
     gameover = false;
-    gamePaused = false; // Unpause the game
-    startButton.style.display = 'none'; // Hide start button
-    restartButton.style.display = 'none'; // Hide restart button
-    paddle.x = canvas.width / 2 - 40; // Reset paddle position
-    ball.x = canvas.width / 2; // Reset ball position
+    gamePaused = false;
+    startButton.style.display = 'none';
+    restartButton.style.display = 'none';
+    paddle.x = canvas.width / 2 - 40;
+    ball.x = canvas.width / 2;
     ball.y = canvas.height - 30;
     bricks.forEach(column => {
         column.forEach(brick => {
-            brick.visible = true; // Reset brick visibility
+            brick.visible = true;
         });
     });
 }
 
-// Event listener for restart button
 restartButton.addEventListener('click', () => {
     restartGame();
-    gamePaused = false; // Unpause the game
-    restartButton.style.display = 'none'; // Hide restart button
+    gamePaused = false;
+    restartButton.style.display = 'none';
     requestAnimationFrame(update);
 });
 

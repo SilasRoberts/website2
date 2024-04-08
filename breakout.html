@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout</title>
+    <link rel="stylesheet" href="css/breakout.css">
+</head>
+<body>
+    <h1>Breakout</h1>
+    <button id="rules-btn" class="btn rules-btn">Show Rules</button>
+    <div id="rules" class="rules">
+        <h2>How To Play:</h2>
+        <p>Use your right and left arrow keys or D and A to move the paddle to bounce the ball up and break the blocks.</p>
+        <p>If you miss the ball, your score and the blocks will reset.</p>
+        <button id="close-btn" class="btn">Close</button>
+    </div>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Breakout</title>
-        <link rel="stylesheet" href="css/breakout.css">
-    </head>
+    <button id="start-btn" class="btn start">Start Game</button>
+    <button id="color-theme-btn" class="btn">Toggle Color Theme</button>
 
-    <body>
-        <h1>Breakout</h1>
-        <button id="rules-btn" class="btn rules-btn">Show Rules</button>
-        <div id="rules" class="rules">
-            <h2>How To Play:</h2>
-            <p>Use you right and left arrow keys or D and A to move the paddle to bounce the ball up and break the blocks.</p>
-            <p>If you miss the ball, your score and the blocks will reset.</p>
-            <button id="close-btn" class="btn">Close</button>
-        </div>
-        <div class="center">
-            <button id="startButton">Start</button>
-        </div>
-        <canvas id="canvas" width="800" height="600"></canvas>
+    <canvas id="canvas" width="800" height="600"></canvas>
 
-    </body>
     <script src="js/breakout.js"></script>
-
+</body>
 </html>
