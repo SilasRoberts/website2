@@ -17,7 +17,25 @@ choose_insect_btns.forEach(btn => {
     const img = btn.querySelector('img')
     const alt = img.getAttribute('alt')
     const src = img.getAttribute('src')
-    screens[1].classList.add('up')}
-    )
+    screens[1].classList.add('up')
+    selected_insect = {src, alt}
+    setTimeout(createInsect, 1000)
+    startGame()
+})
 })
 
+function crateInsect(){
+    const insect = document.createElement('div')
+    insect.classList.add('insect')
+    const { x, y } = getRandomLocation()
+    insect.style.top= `${y}px`
+    insect.style.left = `${x}px`
+}
+
+function getRandomLocation{
+    const width = window.innerWidth
+    const = window.innerHeight
+    const x = Math.random() * (width - 200) + 100
+    cont y = Math.random() * (height -200) + 100
+    return x,y
+}
