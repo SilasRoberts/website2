@@ -72,13 +72,13 @@ function increaseTime() {
 
 }
 function WL(){
-if(score >= 60 && seconds < 30){
+if(score > 60){
+    message.classList.remove('visible')
     Winmessage.classList.add('visible')
-    message.classList.remove('visible')
 }
-if(score < 60 && seconds > 30){
-    LoseMessage.classList.add('visible')
+if(score < 60){
     message.classList.remove('visible')
+    LoseMessage.classList.add('visible')
 }
 }
 function increaseScore() {
@@ -87,7 +87,10 @@ function increaseScore() {
         message.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
-    WL()
+    if(seconds == 30 || score == 60){
+        WL()
+    }
+
 }
 
 function getRandomLocation() {

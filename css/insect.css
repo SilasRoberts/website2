@@ -104,7 +104,7 @@ h1 {
     top: 20px;
     right: 20px;
 }
-#win-message{
+.win-message{
     opacity: 0;
     line-height: 1.7;
     width: 100%;
@@ -117,11 +117,13 @@ h1 {
     left: 50%;
     transform: translate(-50%, -150%);
 }
-#win-message.visible{
+.win-message.visible{
     transition: ease-out 1s;
     opacity: 1;
+    transform: translate(-50%, 150%)
+
 }
-#lose-message{
+.lose-message{
     opacity: 0;
     line-height: 1.7;
     width: 100%;
@@ -134,9 +136,10 @@ h1 {
     left: 50%;
     transform: translate(-50%, -150%);
 }
-#lose-message.visible{
+.lose-message.visible{
     transition: ease-out 1s;
     opacity: 1;
+    transform: translate(-50%, 150%)
 }
 
 .message {
