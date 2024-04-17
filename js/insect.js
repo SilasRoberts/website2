@@ -5,8 +5,8 @@ const start_btn = document.getElementById('start-btn')
 const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
 const message = document.getElementById('message')
-const Winmessage = document.getElementById('win-message')
-const LoseMessage = document.getElementById('loss-message')
+const winmessage = document.getElementById('win-message')
+const loseMessage = document.getElementById('loss-message')
 const won = document.getElementById('winning')
 let seconds = 0
 let score = 0
@@ -71,25 +71,23 @@ function increaseTime() {
     seconds++
 
 }
-function WL(){
-if(score > 60){
-    message.classList.remove('visible')
-    Winmessage.classList.add('visible')
-}
-if(score < 60){
-    message.classList.remove('visible')
-    LoseMessage.classList.add('visible')
-}
-}
+
 function increaseScore() {
     score++
-    if (score > 19) {
+    if (score == 19) {
         message.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
-    if(seconds == 30 || score == 60){
-        WL()
-    }
+    if(score >= 60){
+        if(seconds < 30){
+            message.classList.remove('visible')
+            winmessage.classList.add('visible')
+        }}
+    if(score < 60){
+        if(seconds > 30){
+            message.classList.remove('visible')
+            loseMessage.classList.add('visible')
+        }}
 
 }
 
