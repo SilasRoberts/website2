@@ -86,7 +86,7 @@ function increaseScore() {
     if(score < 60){
         if(seconds > 30){
             message.classList.remove('visible')
-            loseMessage.classList.add('visible')
+            losemessage.classList.add('visible')
         }}
 
 }
