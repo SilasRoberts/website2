@@ -22,11 +22,17 @@ function displayWord() {
         </span>
     `).join('')}
 `
-    const innerText = wordEl.innerText.replace(/\n/g, ''))
+    const innerWord = wordEl.innerText.replace(/\n/g, '')
     if(innerWord == selectedWord){
         finalMessage.innerText = 'Congratulations! You won!'
         popup.stly.display = 'flex'
     }
 }
+
+//keydown letter press
+window.addEventListener('keydown', e =>{
+
+})
+
 
 displayWord()
