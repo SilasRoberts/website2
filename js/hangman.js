@@ -8,28 +8,25 @@ const figureParts = document.querySelectorAll('.figure-part')
 
 const word = ['application', 'programming', 'interface', 'wizard']
 
-let selectedIndex =  Math.floor(word.length * Math.random())
+let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
 
-const correctLetters = ['i']
+const correctLetters = []
 const wrongLetters = []
 
-//show hiddenword
-function displayWord(){
+function displayWord() {
     wordEl.innerHTML = `
-    ${selectedWord
-        .split('')
-        .map(letter => `
+    ${selectedWord.split('').map(letter => `
         <span class="letter">
-          ${correctLetters.includes(letter) ? letter : ''}
-        <span>
-        `).join('')
+            ${correctLetters.includes(letter) ? letter : ''}
+        </span>
+    `).join('')}
+`
+    const innerText = wordEl.innerText.replace(/\n/g, ''))
+    if(innerWord == selectedWord){
+        finalMessage.innerText = 'Congratulations! You won!'
+        popup.stly.display = 'flex'
     }
-
-    `
-    const innerWord = wordEl.innerText.replace(/\n/g, '')
-    
-
 }
 
 displayWord()
