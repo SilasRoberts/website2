@@ -44,6 +44,10 @@ if(e.keyCode >= 65 && e.keyCode <=90){
     } else{
         if(!wrongLetters.include(letter)){
             wrongLetters.push(letter)
+
+            updateWrongLettersEl()
+        } else {
+            showNotification()
         }
     }
 }
