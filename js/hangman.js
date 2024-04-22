@@ -37,6 +37,13 @@ if(e.keyCode >= 65 && e.keyCode <=90){
     if(selectedWord.includes(letter)){
         if(!correctLetters.includes(letter)){
             correctLetters.push(letter)
+            displayWord()
+        } else{
+            showNotification()
+        }
+    } else{
+        if(!wrongLetters.include(letter)){
+            wrongLetters.push(letter)
         }
     }
 }
