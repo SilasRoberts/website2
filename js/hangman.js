@@ -88,7 +88,18 @@ if(e.keyCode >= 65 && e.keyCode <=90){
 }
 })
 
+playAgainBtn.addeventListener('click', () => {
+correctLetters.length = 0
+wrongLetters.length = 0
+selectedIndex = Math.floor(word.length * Math.random())
+selectedWord = word[selectedIndex]
+displayWord()
 
+updateWrongLettersEl()
+
+popup.style.display= 'none'
+
+})
 
 
 displayWord()
