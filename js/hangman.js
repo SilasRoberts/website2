@@ -32,7 +32,19 @@ function displayWord() {
 
 //update wrong letters
 function updateWrongLettersEl(){
-    console.log('Update Wrong')
+    wrongLettersEl.innerHYML= `
+        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+        ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+    `
+    figureParts.forEach((part, index) => {
+        const erros = wrongLetters.length
+
+        if(index < errors){
+            part.style.display ='block'
+        } else{
+            part.style.display = 'none'
+        }
+    })
 }
 
 
