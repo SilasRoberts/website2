@@ -88,7 +88,7 @@ if(e.keyCode >= 65 && e.keyCode <=90){
 }
 })
 
-playAgainBtn.addeventListener('click', () => {
+playAgainBtn.addEventListener('click', () => {
 correctLetters.length = 0
 wrongLetters.length = 0
 selectedIndex = Math.floor(word.length * Math.random())
