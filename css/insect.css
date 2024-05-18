@@ -3,14 +3,26 @@
 * {
     box-sizing: border-box;
 }
-
+.home{
+    
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #4CAF50;
+        text-decoration: none;
+        border-radius: 5px;
+}
 body{
     background-color: #516dff;
     color: #ffffff;
     font-family: "Press Start 2P", system-ui;
     height: 100vh;
     overflow: hidden;
-    text-align: center;
+    margin:0;
+    
 }
 
 .choose-insect-btn img {
