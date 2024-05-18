@@ -1,0 +1,31 @@
+body{
+    background-color:rgb(24,144,144);
+    height: 100%;
+    margin: 0;
+}
+#start-button{
+    width: 50vw;
+    height: 12.5vh; 
+    color: rgb(0, 0, 0); 
+    border: none;
+    text-align: center;
+    font-size: 32px;
+    cursor: pointer;
+    background-color:rgb(216,96,0); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.start-button.invisible{
+transition:ease-out 0.5s ;
+opacity:0;
+}
+.stuff{
+    opacity: 0%;
+    color:rgb(216,96,0);
+}
+.stuff.visible{
+    opacity: 100%;
+    transition: ease-in 0.5s;
+}
