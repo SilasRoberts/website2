@@ -14,91 +14,121 @@ let selectedWord = word[selectedIndex]
 const correctLetters = []
 const wrongLetters = []
 
+
+
+let continueRunning = true
+
+// Show hidden word
 function displayWord() {
     wordEl.innerHTML = `
-    ${selectedWord.split('').map(letter => `
-        <span class="letter">
+      ${selectedWord
+        .split('')
+        .map(letter => `
+          <span class="letter">
             ${correctLetters.includes(letter) ? letter : ''}
-        </span>
-    `).join('')}
-`
+          </span>
+        `).join('')
+    }
+    `
     const innerWord = wordEl.innerText.replace(/\n/g, '')
-    if(innerWord == selectedWord){
+
+    if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You won!'
-        popup.stlye.display = 'flex'
+        popup.style.display = 'flex'
+        continueRunning = false
     }
 }
 
-
-//update wrong letters
-function updateWrongLettersEl(){
-    wrongLettersEl.innerHYML= `
-        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
-        ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+// Update the wrong letters
+function updateWrongLettersEl() {
+    //display wrong letters
+    wrongLettersEl.innerHTML = `
+     ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `
+    //display different parts
     figureParts.forEach((part, index) => {
-        const erros = wrongLetters.length
+        const errors = wrongLetters.length
 
-        if(index < errors){
-            part.style.display ='block'
-        } else{
+        if (index < errors) {
+            part.style.display = 'block'
+        } else {
             part.style.display = 'none'
         }
     })
 
-
-    if(wrongLetters.length == figureParts.length){
-        finalMessage.innerText = 'Unfortunately you lost!'
+    //check if lost
+    if (wrongLetters.length == figureParts.length) {
+        finalMessage.innerText = `Unfortunately you lost! The word was: ${selectedWord}`
         popup.style.display = 'flex'
+        continueRunning = false
     }
+
+
+
+
 }
 
-
-//show notification
-function showNotification(){
+// Show notification
+function showNotification() {
     notification.classList.add('show')
 
     setTimeout(() => {
-        notifciation.classList.remove('show')
+      notification.classList.remove('show')
     }, 2000)
 }
 
+// function endGame() {
+//     if (wrongLetters.length == figureParts.length)
+//     {
+//         wrongLettersEl.innerHTML = `
+//         ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+//     }
+// }
 
-//keydown letter press
-window.addEventListener('keydown', e =>{
-if(e.keyCode >= 65 && e.keyCode <=90){
-    const letter = e.key
+// Keydown letter press
+window.addEventListener('keydown', e => {
 
-    if(selectedWord.includes(letter)){
-        if(!correctLetters.includes(letter)){
-            correctLetters.push(letter)
-            displayWord()
-        } else{
-            showNotification()
-        }
-    } else{
-        if(!wrongLetters.include(letter)){
-            wrongLetters.push(letter)
+ if (continueRunning == true) {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+        const letter = e.key
 
-            updateWrongLettersEl()
-        } else {
-            showNotification()
+        if (selectedWord.includes(letter)) {
+            if( !correctLetters.includes(letter)) {
+                correctLetters.push(letter)
+
+                displayWord()
+            }   else {
+                showNotification()
+            }
+        }   else {
+            if (!wrongLetters.includes(letter)) {
+                wrongLetters.push(letter)
+
+                updateWrongLettersEl()
+            } else {
+                showNotification()
+            }
         }
     }
-}
+ }
 })
 
+
+// Restart game and play again
 playAgainBtn.addEventListener('click', () => {
-correctLetters.length = 0
-wrongLetters.length = 0
-selectedIndex = Math.floor(word.length * Math.random())
-selectedWord = word[selectedIndex]
-displayWord()
+    correctLetters.length = 0
+    wrongLetters.length = 0
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
 
-updateWrongLettersEl()
+    displayWord()
 
-popup.style.display= 'none'
+    updateWrongLettersEl()
 
+    popup.style.display = 'none'
+
+    continueRunning = true
 })
 
 
