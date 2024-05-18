@@ -6,7 +6,7 @@ const timeEl = document.getElementById('time')
 const scoreEl = document.getElementById('score')
 const message = document.getElementById('message')
 const winmessage = document.getElementById('win-message')
-const loseMessage = document.getElementById('loss-message')
+const losemmessage = document.getElementById('lose-message')
 const won = document.getElementById('winning')
 let seconds = 0
 let score = 0
@@ -78,18 +78,19 @@ function increaseScore() {
         message.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
-    if(score >= 60){
-        if(seconds < 30){
+    if(score == 60 && seconds < 30){
             message.classList.remove('visible')
             winmessage.classList.add('visible')
-        }}
-    if(score < 60){
-        if(seconds > 30){
+        }
+     if(seconds > 30 && score < 60){
+            losemmessage.classList.add('visible')
             message.classList.remove('visible')
-            losemessage.classList.add('visible')
-        }}
+        }
+    }
+    
+    
 
-}
+
 
 function getRandomLocation() {
     const width = window.innerWidth
